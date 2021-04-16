@@ -37,9 +37,9 @@ public class UsersController {
 		return("working on port "+ env.getProperty("local.server.port"));
 	}
 	
-	@PostMapping (consumes= {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE},
-				  produces= {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE}
-				)
+@PostMapping (consumes= {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE},
+			  produces= {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE}
+			)
 	public ResponseEntity<CreateUserResponseModel> createUser(@Valid @RequestBody CreateUserRequestModel userDetails)
 	{
 		ModelMapper modelMapper= new ModelMapper();

@@ -24,6 +24,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 		this.environment = environment;
 		this.usersService = usersService;
 		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+		
 	}
 	@Override
 	protected void configure (HttpSecurity http) throws Exception
@@ -38,7 +39,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 	private AuthenticationFilter getAuthenticationFilter() throws Exception
 	{
 		AuthenticationFilter authenticationFilter = new AuthenticationFilter(usersService,environment,authenticationManager());
-		authenticationFilter.setAuthenticationManager(authenticationManager());
+		//authenticationFilter.setAuthenticationManager(authenticationManager());
 		return authenticationFilter;
 	}
 	
